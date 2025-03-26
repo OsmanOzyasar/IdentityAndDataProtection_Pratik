@@ -1,0 +1,13 @@
+﻿namespace IdentityAndDataProtection_Pratik.Types
+{
+    public class ServiceMessage
+    {
+        public bool IsSucceed { get; set; }
+        public string Message { get; set; }
+    }
+
+    public class ServiceMessage<T> : ServiceMessage
+    {
+        public T? Data { get; set; }
+    }
+}
