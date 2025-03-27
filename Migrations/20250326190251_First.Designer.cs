@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace IdentityAndDataProtection_Pratik.Migrations
 {
     [DbContext(typeof(IdentityDbContext))]
-    [Migration("20250325075621_First")]
+    [Migration("20250326190251_First")]
     partial class First
     {
         /// <inheritdoc />
@@ -45,8 +45,10 @@ namespace IdentityAndDataProtection_Pratik.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(20)
-                        .HasColumnType("character varying(20)");
+                        .HasColumnType("text");
+
+                    b.Property<int>("UserType")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
